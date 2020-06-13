@@ -1,51 +1,51 @@
 <template>
-  <div class="page-home">
+  <default-layout>
+    <div class="page-home">
+      <section class="section_video">
+        <div>
+          <h1>
+            <span>Restaurant</span>
+            <span>de spécialités</span>
+            <span>régionales à Dole !</span>
+          </h1>
+          <a>La carte</a>
+        </div>
+        <video autoplay muted loop poster="../assets/videos/cover.jpg">
+          <source src="../assets/videos/demilune.mp4" type="video/mp4">
+        </video>
+      </section>
 
-    <section class="section_video">
-      <div>
-        <h1>
-          <span>Restaurant</span>
-          <span>de spécialités</span>
-          <span>régionales à Dole !</span>
-        </h1>
-        <a>La carte</a>
-      </div>
-      <video autoplay muted loop poster="../assets/videos/cover.jpg">
-        <source src="../assets/videos/demilune.mp4" type="video/mp4">
-      </video>
-    </section>
+      <section class="section_text wrapper section-1">
+        <h2>Envie de déjeuner en terrasse ?</h2>
+        <p>Le restaurant la Demi-lune vous propose une jolie terrasse aux bord du canal dans le vieux Dole. Découvrez nos spécialités régionales avec une large sélection de vins pour accompagner ces délicieux produits du terroir.</p>
+      </section>
 
-    <section class="section_text wrapper section-1">
-      <h2>Envie de déjeuner en terrasse ?</h2>
-      <p>Le restaurant la Demi-lune vous propose une jolie terrasse aux bord du canal dans le vieux Dole. Découvrez nos spécialités régionales avec une large sélection de vins pour accompagner ces délicieux produits du terroir.</p>
-    </section>
+      <img src="../assets/images/terrasse.jpg" alt="terrasse du restaurant la demi-lune à Dole">
 
-    <img src="../assets/images/terrasse.jpg" alt="terrasse du restaurant la demi-lune à Dole">
+      <section class="section_horraires wrapper section-1">
+        <h2>Horraires</h2>
+        <ul>
+          <li><span>Lundi</span> 19h 22h</li>
+          <li><span>Mardi</span> 19h 22h</li>
+          <li><span>Mercredi</span> 12h 14h - 19h 22h</li>
+          <li><span>Jeudi</span> 12h 14h - 19h 22h</li>
+          <li><span>Vendredi</span> 12h 14h - 19h 22h</li>
+          <li><span>Samedi</span> 12h 14h - 19h 22h</li>
+          <li><span>Dimanche</span> 12h 14h - 19h 22h</li>
+        </ul>
+      </section>
 
-    <section class="section_horraires wrapper section-1">
-      <h2>Horraires</h2>
-      <ul>
-        <li><span>Lundi</span> 19h 22h</li>
-        <li><span>Mardi</span> 19h 22h</li>
-        <li><span>Mercredi</span> 12h 14h - 19h 22h</li>
-        <li><span>Jeudi</span> 12h 14h - 19h 22h</li>
-        <li><span>Vendredi</span> 12h 14h - 19h 22h</li>
-        <li><span>Samedi</span> 12h 14h - 19h 22h</li>
-        <li><span>Dimanche</span> 12h 14h - 19h 22h</li>
-      </ul>
-    </section>
-
-    <section class="sections_images">
-      <img src="../assets/images/cover1.jpg" alt="terrasse du restaurant la demi-lune à Dole">
-      <img src="../assets/images/cover4.jpg" alt="terrasse du restaurant la demi-lune à Dole">
-      <img src="../assets/images/cover3.jpg" alt="terrasse du restaurant la demi-lune à Dole">
-      <img src="../assets/images/cover2.jpg" alt="terrasse du restaurant la demi-lune à Dole">
-    </section>
-
-    <section class="section_menu wrapper section-1 center">
-      <a class="link-2">Voir la carte</a>
-    </section>
-  </div>
+      <section class="sections_images">
+        <img src="../assets/images/cover1.jpg" alt="terrasse du restaurant la demi-lune à Dole">
+        <img src="../assets/images/cover4.jpg" alt="terrasse du restaurant la demi-lune à Dole">
+        <img src="../assets/images/cover3.jpg" alt="terrasse du restaurant la demi-lune à Dole">
+        <img src="../assets/images/cover2.jpg" alt="terrasse du restaurant la demi-lune à Dole">
+      </section>
+      <section class="section_menu wrapper section-1 center">
+        <a class="link-2">Voir la carte</a>
+      </section>
+    </div>
+  </default-layout>
 </template>
 
 <script>

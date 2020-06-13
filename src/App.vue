@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <default-layout>
       <router-view/>
-    </default-layout>
   </div>
 </template>
 
@@ -30,6 +28,13 @@
     font-size: inherit;
     text-decoration: none;
     list-style-type: none;
+  }
+  input {
+    outline: none;
+  }
+  button {
+    background: none;
+    border: none;
   }
   img {
     width: 100%;
