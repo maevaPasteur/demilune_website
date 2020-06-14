@@ -1,10 +1,10 @@
 <template>
     <Layout2 v-if="auth">
-        <div class="wrapper section-admin-2">
+        <div class="wrapper">
             <h1>La liste des plats proposés</h1>
-            <router-link :to="{ name: 'MealCreate' }">Créer un plat +</router-link>
+            <router-link class="link-2" :to="{ name: 'MealCreate' }">Créer un plat +</router-link>
             <div class="list" v-if="ready">
-                <details v-for="(type, key) in meals" :key="key" open>
+                <details v-for="(type, key) in meals" :key="key">
                     <summary><h2>{{ key }}</h2></summary>
                     <router-link v-for="meal in type" :key="meal.title" :to="{ name: 'MealUpdate', params: { id: meal._id }}">
                         <h3>{{ meal.title }} <span v-if="meal.price">- {{ meal.price }}€</span></h3>
@@ -95,6 +95,3 @@
     }
 </script>
 
-<style lang="scss">
-
-</style>

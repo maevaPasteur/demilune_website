@@ -1,6 +1,6 @@
 <template>
     <Layout2 v-if="auth">
-        <div class="wrapper section-admin-2">
+        <div class="wrapper">
             <router-link :to="{ name: 'Meals' }">Voir tous les plats +</router-link>
             <form @submit.prevent="submit" @click="success = false" v-if="ready">
                 <div>
@@ -17,11 +17,11 @@
                     </label>
                     <label>
                         <span>Prix (optionnel)</span>
-                        <input type="number" v-model="newMeal.price"/>
+                        <input type="number" step="0.01" v-model="newMeal.price"/>
                     </label>
                     <label>
                         <span>Description (optionel)</span>
-                        <input type="text" v-model="newMeal.description"/>
+                        <textarea v-model="newMeal.description"></textarea>
                     </label>
                     <label>
                         <span>Informations supplémentaires (optionel)</span>
@@ -34,7 +34,7 @@
                         </label>
                         <label>
                             <span>Prix de la variante 1 (optionel)</span>
-                            <input type="number" v-model="newMeal.variant_1_price">
+                            <input type="number" step="0.01" v-model="newMeal.variant_1_price">
                         </label>
                     </div>
                     <div class="d-flex">
@@ -44,7 +44,7 @@
                         </label>
                         <label>
                             <span>Prix de la variante 2 (optionel)</span>
-                            <input type="number" v-model="newMeal.variant_2_price">
+                            <input type="number" step="0.01" v-model="newMeal.variant_2_price">
                         </label>
                     </div>
                 </div>

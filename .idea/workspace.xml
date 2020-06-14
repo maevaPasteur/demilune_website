@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="793a80e8-cccf-43e7-997d-c2ec58d600de" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/Layout2.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/Layout2.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Meals.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Meals.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/MealsCreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/MealsCreate.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/MealsUpdate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/MealsUpdate.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/PagesUpdate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/PagesUpdate.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,7 +68,7 @@
       <option name="presentableId" value="Default" />
       <updated>1591291512705</updated>
       <workItem from="1591291513852" duration="1411000" />
-      <workItem from="1592049385800" duration="59977000" />
+      <workItem from="1592049385800" duration="62108000" />
     </task>
     <servers />
   </component>

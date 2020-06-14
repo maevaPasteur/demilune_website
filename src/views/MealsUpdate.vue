@@ -1,6 +1,6 @@
 <template>
     <Layout2 v-if="auth && ready">
-        <div class="wrapper section-admin-2">
+        <div class="wrapper">
             <router-link :to="{ name: 'Meals' }">Voir tous les plats +</router-link>
             <h1 v-if="!meal">Aucun plat ne correspond à cette url</h1>
             <div v-else>
@@ -141,5 +141,4 @@
         }
     }
 </script>
-
 

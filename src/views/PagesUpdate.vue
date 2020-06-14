@@ -1,6 +1,6 @@
 <template>
     <Layout2 v-if="auth && ready">
-        <div class="wrapper section-admin-2 large">
+        <div class="wrapper section-new-page large">
             <div v-if="page">
                 <h1>Modifier la page : {{ page.title }}</h1>
                 <router-link :to="{ name: 'Pages' }">Voir toutes les pages</router-link>

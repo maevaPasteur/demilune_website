@@ -106,7 +106,7 @@
         }
         .wrapper {
             margin-top: 100px;
-
+            padding-bottom: 100px;
         }
         h1 {
             font-size: 30px;
@@ -186,7 +186,7 @@
             a {
                 display: block;
                 margin-top: 20px;
-                padding-left: 80px;
+                padding-left: 40px;
                 line-height: 1.5;
                 font-size: 15px;
                 font-weight: 300;
@@ -202,7 +202,6 @@
                 }
             }
             h3 {
-                transform: translateX(-40px);
                 font-size: 18px;
                 font-weight: 400;
                 & + p, & + ul {
@@ -216,6 +215,7 @@
         }
         .infos {
             opacity: .5;
+            font-style: italic;
         }
         summary {
             padding: 20px;
@@ -318,6 +318,23 @@
         p {
             font-size: 14px;
             margin: 20px 0 40px;
+        }
+    }
+    .section-new-page {
+        form .create-content label {
+            width: 100%;
+            span {
+                display: flex;
+                align-items: flex-start;
+                line-height: 1.3;
+                &:before, &:after {
+                    margin-top: -3px;
+                }
+            }
+            span:before {
+                display: block;
+                flex-shrink: 0;
+            }
         }
     }
 </style>
