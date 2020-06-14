@@ -5,22 +5,22 @@
             <nav>
                 <ul>
                     <li>
-                        <router-link to="/admin">Paramètres globaux</router-link>
+                        <router-link :to="{ name: 'Admin' }">Paramètres globaux</router-link>
                     </li>
                     <li>
-                        <router-link to="/admin">La carte</router-link>
+                        <router-link :to="{ name: 'Admin' }">La carte</router-link>
                     </li>
                     <li>
-                        <router-link to="/admin">Les pages</router-link>
+                        <router-link :to="{ name: 'Admin' }">Les pages</router-link>
                     </li>
                     <li>
-                        <router-link to="/admin">Les menus</router-link>
+                        <router-link :to="{ name: 'Admin' }">Les menus</router-link>
                     </li>
                     <li>
-                        <router-link to="/admin">Les plats</router-link>
+                        <router-link to="/admin/plats">Les plats</router-link>
                     </li>
                     <li>
-                        <router-link to="/admin">Les types de plats</router-link>
+                        <router-link :to="{ name: 'Admin' }">Les types de plats</router-link>
                     </li>
                 </ul>
             </nav>
@@ -49,6 +49,22 @@
 
 <style lang="scss">
     .page-admin {
+        .delete {
+            border-color: red;
+            margin-left: 10px;
+            color: red;
+            &:before {
+                background-color: red;
+            }
+            &:hover {
+                color: #fff;
+            }
+        }
+        input::placeholder {
+            opacity: .5;
+            font-style: italic;
+            font-size: 15px;
+        }
         header {
             padding: 5px 20px;
             font-size: 18px;
@@ -90,6 +106,119 @@
         }
         .wrapper {
             margin-top: 100px;
+
+        }
+        h1 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        form {
+            & > div {
+                margin-top: 40px;
+                padding-top: 40px;
+                border-top: solid 2px #ddd;
+            }
+            button {
+                margin: 40px auto 100px;
+                font-size: 16px;
+                font-weight: 400;
+            }
+            h2 {
+                position: relative;
+                display: inline-block;
+                &:before {
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    z-index: -1;
+                    background-color: #ffed00;
+                    top: 0;
+                    left: 0;
+                    position: absolute;
+                }
+            }
+            .d-flex {
+                display: flex;
+                justify-content: space-between;
+                label {
+                    width: calc(50% - 10px);
+                }
+            }
+            .success {
+                color: #42b983;
+                margin-top: 40px;
+            }
+        }
+        label {
+            display: block;
+            margin-top: 20px;
+            span {
+                font-size: 14px;
+                margin-bottom: 5px;
+                display: block;
+            }
+        }
+        input, textarea, select {
+            width: calc(100% - 40px);
+            border: 0;
+            background: #fff;
+            padding: 20px;
+        }
+        select {
+            width: 100%;
+        }
+        textarea {
+            min-height: 100px;
+            min-width: calc(100% - 40px);
+            max-width: calc(100% - 40px);
+        }
+        details {
+            margin-top: 10px;
+            &:first-of-type {
+                margin-top: 40px;
+            }
+            a {
+                display: block;
+                margin-top: 20px;
+                padding-left: 80px;
+                line-height: 1.5;
+                font-size: 15px;
+                font-weight: 300;
+                &:last-of-type {
+                    margin-bottom: 20px;
+                }
+                &:not(:last-of-type) {
+                    border-bottom: solid 1px #ccc;
+                    padding-bottom: 20px;
+                }
+                &:hover h3 {
+                    color: #e4af08;
+                }
+            }
+            h3 {
+                transform: translateX(-40px);
+                font-size: 18px;
+                font-weight: 400;
+                & + p, & + ul {
+                    margin-top: 5px;
+                }
+            }
+            li {
+                list-style-type: disc;
+                margin-left: 20px;
+            }
+        }
+        .infos {
+            opacity: .5;
+        }
+        summary {
+            padding: 20px;
+            display: flex;
+            font-size: 25px;
+            align-items: center;
+            background-color: #fff;
+            cursor: pointer;
         }
     }
 </style>

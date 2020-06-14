@@ -28,6 +28,7 @@
     font-size: inherit;
     text-decoration: none;
     list-style-type: none;
+    outline: none;
   }
   input {
     outline: none;

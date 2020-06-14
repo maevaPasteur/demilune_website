@@ -1,5 +1,5 @@
 <template>
-    <div class="page-login wrapper">
+    <div class="page-login wrapper" v-if="ready">
         <img src="../assets/images/logo_1.svg" alt="logo du restaurant la Demi-lune à Dole">
         <h1>Connexion</h1>
         <form @submit.prevent="submit">
@@ -23,13 +23,21 @@
             return {
                 username: "",
                 password: "",
-                error: false
+                error: false,
+                ready: false
             }
         },
         props: {
             errorMessage: {
                 type: String,
                 default: ""
+            }
+        },
+        mounted() {
+            if(Authentification.state.auth) {
+                window.location.href = 'admin';
+            } else {
+                this.ready = true
             }
         },
         methods: {
