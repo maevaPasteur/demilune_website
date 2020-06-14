@@ -286,18 +286,38 @@
             padding: 20px;
             cursor: pointer;
             border-radius: 10px;
-            transition: all ease-in-out .3s;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: box-shadow ease-in-out .3s;
             &:not(:last-of-type) {
                 margin-bottom: 10px;
             }
             &:hover {
                 box-shadow: 5px 5px 5px rgba(0,0,0,.1);
             }
+            a {
+                font-size: 14px;
+                margin: 0;
+                z-index: 2;
+            }
         }
         a {
             display: block;
             width: fit-content;
             margin-top: 40px;
+        }
+    }
+    .large {
+        max-width: 1200px;
+    }
+    form > .d-flex > div {
+        width: calc(50% - 20px);
+    }
+    .d-flex .drag {
+        p {
+            font-size: 14px;
+            margin: 20px 0 40px;
         }
     }
 </style>

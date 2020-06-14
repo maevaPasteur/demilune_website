@@ -9,6 +9,7 @@ import MealsCreate from "../views/MealsCreate";
 import MealsUpdate from "../views/MealsUpdate";
 import Pages from "../views/Pages";
 import PagesCreate from "../views/PagesCreate";
+import PagesUpdate from "../views/PagesUpdate";
 
 Vue.use(VueRouter);
 
@@ -44,7 +45,7 @@ Vue.use(VueRouter);
       component: MealsCreate
     },
     {
-      path: '/admin/plats/modifier/:id',
+      path: '/admin/plats/:id',
       name: 'MealUpdate',
       component: MealsUpdate
     },
@@ -54,9 +55,14 @@ Vue.use(VueRouter);
       component: Pages
     },
     {
-      path: '/admin/pages/create',
+      path: '/admin/pages/nouveau',
       name: 'PagesCreate',
       component: PagesCreate
+    },
+    {
+      path: '/admin/pages/:id',
+      name: 'PagesUpdate',
+      component: PagesUpdate
     }
 ];
 

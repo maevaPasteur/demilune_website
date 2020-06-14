@@ -48,6 +48,8 @@
     font-size: 18px;
     color: #000;
     font-family: 'Gordita', sans-serif;
+    width: 100%;
+    overflow-x: hidden;
   }
   main {
     position: relative;

@@ -46,6 +46,8 @@
             if(!this.auth) {
                 window.location.href = 'connexion';
             }
+            let date = new Date;
+            this.page.id = date.getFullYear()+'-'+date.getMonth()+'-'+date.getDay()+'-'+date.getHours()+'-'+date.getSeconds()+'-'+date.getMilliseconds();
             const types = await this.getMealsType();
             const allMeals = await this.getMeals();
             types.forEach(type => {
@@ -63,12 +65,18 @@
                 meals: {},
                 checked: [],
                 page: {
+                    id: null,
                     title: null,
-                    content: []
+                    content: [],
+                    type: 'page'
                 }
             }
         },
         methods: {
+            generateId() {
+                let date = new Date;
+                this.page.id = date.getFullYear()+'-'+date.getMonth()+'-'+date.getDay()+'-'+date.getHours()+'-'+date.getSeconds()+'-'+date.getMilliseconds();
+            },
             getMealsType() {
                 return new Promise(resolve => {
                     axios
@@ -99,24 +107,28 @@
             },
             submit() {
                 axios
-                    .post(`http://localhost:3000/pages`, {
-                        headers: {'Access-Control-Allow-Origin': '*'},
-                        title: this.page.title,
-                        content: this.page.content
-                    })
+                    .get('http://localhost:3000/general', {headers: {'Access-Control-Allow-Origin': '*'}})
                     .then(res => {
-                        console.log(res);
-                        this.success = true;
-                        this.page.title = '';
-                        this.page.content = ''
+                        let pages = res.data[0].pages;
+                        pages.push(this.page);
+                        axios
+                            .patch(`http://localhost:3000/general/${res.data[0]._id}`, {
+                                headers: {'Access-Control-Allow-Origin': '*'},
+                                pages: pages
+                            })
+                            .then(res => {
+                                console.log(res);
+                                this.success = true;
+                                this.page.title = '';
+                                this.page.content = [];
+                                let date = new Date;
+                                this.page.id = date.getFullYear()+'-'+date.getMonth()+'-'+date.getDay()+'-'+date.getHours()+'-'+date.getSeconds()+'-'+date.getMilliseconds();
+                            })
                     })
                     .catch(err => {
                         console.log(err);
-                        this.success = false
-                    })
+                    });
             }
-
-
         }
     }
 </script>
