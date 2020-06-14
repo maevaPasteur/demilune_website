@@ -4,7 +4,6 @@ class Authentification {
         this.state = {
             auth: localStorage.getItem('usertoken') && localStorage.getItem('usertoken') !== ''
         };
-        console.log('hello', this.state.auth)
     }
 
     logout() {

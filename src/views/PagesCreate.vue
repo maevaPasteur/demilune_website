@@ -106,7 +106,9 @@
                     })
                     .then(res => {
                         console.log(res);
-                        this.success = true
+                        this.success = true;
+                        this.page.title = '';
+                        this.page.content = ''
                     })
                     .catch(err => {
                         console.log(err);

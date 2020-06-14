@@ -11,13 +11,13 @@
                         <router-link :to="{ name: 'Admin' }">La carte</router-link>
                     </li>
                     <li>
-                        <router-link :to="{ name: 'Admin' }">Les pages</router-link>
+                        <router-link :to="{ name: 'Pages' }">Les pages</router-link>
                     </li>
                     <li>
                         <router-link :to="{ name: 'Admin' }">Les menus</router-link>
                     </li>
                     <li>
-                        <router-link to="/admin/plats">Les plats</router-link>
+                        <router-link :to="{ name: 'Meals' }">Les plats</router-link>
                     </li>
                     <li>
                         <router-link :to="{ name: 'Admin' }">Les types de plats</router-link>

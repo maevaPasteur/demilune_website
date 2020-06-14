@@ -117,7 +117,20 @@
                     .post(`http://localhost:3000/meals`, data)
                     .then(res => {
                         console.log(res);
-                        this.success = true
+                        this.success = true;
+
+                        // Init old value
+                        this.newMeal = {
+                            title: null,
+                            description: null,
+                            infos: null,
+                            type: null,
+                            price: null,
+                            variant_1_title: null,
+                            variant_1_price: null,
+                            variant_2_title: null,
+                            variant_2_price: null
+                        }
                     })
                     .catch(err => {
                         console.log(err);

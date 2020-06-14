@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="793a80e8-cccf-43e7-997d-c2ec58d600de" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/views/Pages.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/PagesCreate.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/layouts/Layout2.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/Layout2.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Meals.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Meals.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stores/Authentification.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/stores/Authentification.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/MealsCreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/MealsCreate.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/PagesCreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/PagesCreate.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +68,7 @@
       <option name="presentableId" value="Default" />
       <updated>1591291512705</updated>
       <workItem from="1591291513852" duration="1411000" />
-      <workItem from="1592049385800" duration="46799000" />
+      <workItem from="1592049385800" duration="47570000" />
     </task>
     <servers />
   </component>
