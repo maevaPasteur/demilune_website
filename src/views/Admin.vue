@@ -1,6 +1,8 @@
 <template>
     <Layout2 v-if="auth">
-        <h1>Bravo tu es co!</h1>
+        <div class="wrapper section-admin-1">
+            <h1>Bienvenue</h1>
+        </div>
     </Layout2>
 </template>
 
@@ -25,5 +27,9 @@
 </script>
 
 <style lang="scss">
-
+    .section-admin-1 {
+        h1 {
+            font-size: 30px;
+        }
+    }
 </style>

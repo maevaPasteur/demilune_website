@@ -1,14 +1,10 @@
 <template>
-  <default-layout>
+  <default-layout v-if="general" :text="general.footer">
     <div class="page-home">
       <section class="section_video">
         <div>
-          <h1>
-            <span>Restaurant</span>
-            <span>de spécialités</span>
-            <span>régionales à Dole !</span>
-          </h1>
-          <a>La carte</a>
+          <h1 v-html="title()"></h1>
+          <a>{{ general.button }}</a>
         </div>
         <video autoplay muted loop poster="../assets/videos/cover.jpg">
           <source src="../assets/videos/demilune.mp4" type="video/mp4">
@@ -16,8 +12,8 @@
       </section>
 
       <section class="section_text wrapper section-1">
-        <h2>Envie de déjeuner en terrasse ?</h2>
-        <p>Le restaurant la Demi-lune vous propose une jolie terrasse aux bord du canal dans le vieux Dole. Découvrez nos spécialités régionales avec une large sélection de vins pour accompagner ces délicieux produits du terroir.</p>
+        <h2>{{ general.title_2 }}</h2>
+        <p>{{ general.text_2 }}</p>
       </section>
 
       <img src="../assets/images/terrasse.jpg" alt="terrasse du restaurant la demi-lune à Dole">
@@ -25,13 +21,13 @@
       <section class="section_horraires wrapper section-1">
         <h2>Horraires</h2>
         <ul>
-          <li><span>Lundi</span> 19h 22h</li>
-          <li><span>Mardi</span> 19h 22h</li>
-          <li><span>Mercredi</span> 12h 14h - 19h 22h</li>
-          <li><span>Jeudi</span> 12h 14h - 19h 22h</li>
-          <li><span>Vendredi</span> 12h 14h - 19h 22h</li>
-          <li><span>Samedi</span> 12h 14h - 19h 22h</li>
-          <li><span>Dimanche</span> 12h 14h - 19h 22h</li>
+          <li v-if="general.day_1 && general.day_1 !== ''"><span>Lundi</span>{{ general.day_1 }}</li>
+          <li v-if="general.day_2 && general.day_2 !== ''"><span>Mardi</span>{{ general.day_2 }}</li>
+          <li><span>Mercredi</span>{{ general.day_3 }}</li>
+          <li><span>Jeudi</span>{{ general.day_4 }}</li>
+          <li><span>Vendredi</span>{{ general.day_5 }}</li>
+          <li><span>Samedi</span>{{ general.day_6 }}</li>
+          <li><span>Dimanche</span>{{ general.day_7 }}</li>
         </ul>
       </section>
 
@@ -42,7 +38,7 @@
         <img src="../assets/images/cover2.jpg" alt="terrasse du restaurant la demi-lune à Dole">
       </section>
       <section class="section_menu wrapper section-1 center">
-        <a class="link-2">Voir la carte</a>
+        <a class="link-2">{{ general.button_2 }}</a>
       </section>
     </div>
   </default-layout>
@@ -50,9 +46,43 @@
 
 <script>
 
-export default {
-  name: 'Home',
-}
+    import axios from 'axios';
+
+    export default {
+        name: 'Home',
+        mounted() {
+            axios
+                .get('http://localhost:3000/general', {
+                  headers: {'Access-Control-Allow-Origin': '*'}
+                })
+                .then(res => {
+                  if(res.data.error || !res.data.length) {
+                    console.log("général est vide")
+                  } else {
+                    this.general = res.data[0];
+                  }
+                })
+                .catch(err => {
+                  console.log(err)
+                })
+        },
+        data() {
+            return {
+                general: undefined
+            }
+        },
+        methods: {
+            title() {
+              if(this.general) {
+                let newTitle = '';
+                this.general.title.split('<br>').forEach(item => {
+                  newTitle += `<span>${ item }</span>`
+                });
+                return newTitle
+              }
+            }
+        }
+    }
 </script>
 
 <style lang="scss">

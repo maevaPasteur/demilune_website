@@ -19,11 +19,21 @@
                 <p>03 84 72 82 82</p>
                 <br>
             </div>
-            <p>Les groupes sont les bienvenus ! Vous avez également la possibilité de privatiser le restaurant pour des évènements tels qu'un mariage, une rencontre sportif, un anniversaire, un baptême, etc. Contactez nous et nous nous ferons un plaisir de vous proposer un menu sur-mesure selon vos envies.
-            </p>
+            <p>{{ text }}</p>
         </footer>
     </div>
 </template>
+
+<script>
+
+    export default {
+        name: 'Default',
+        props: {
+            text: String
+        }
+    }
+</script>
+
 
 <style lang="scss">
     header {

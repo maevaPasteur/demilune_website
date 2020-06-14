@@ -23,7 +23,7 @@
   * {
     padding: 0;
     margin: 0;
-    font-weight: normal;
+    font-weight: inherit;
     color: inherit;
     font-size: inherit;
     text-decoration: none;
@@ -40,8 +40,11 @@
     width: 100%;
     height: auto;
   }
+  button {
+      font-family: 'Gordita', sans-serif;
+  }
   body {
-    font-size: 12px;
+    font-size: 18px;
     color: #000;
     font-family: 'Gordita', sans-serif;
   }
@@ -62,8 +65,8 @@
       margin-bottom: 50px;
     }
   }
-  .link-1 {
-    span {
+  .link-1, .page-admin header li {
+    span, a {
       position: relative;
       &:before {
         content: '';
@@ -78,7 +81,8 @@
         transition: width ease-out .2s;
       }
     }
-    &:hover span:before {
+    &:hover span:before,
+    &:hover a:before {
       width: 100%;
     }
   }
