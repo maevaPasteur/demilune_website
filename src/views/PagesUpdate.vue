@@ -26,6 +26,7 @@
                             </div>
                             <p v-if="success" class="success">La page a bien été créé</p>
                             <button type="submit" class="link-2">Enregistrer les modifications</button>
+                            <button @click.prevent="deletePage" class="link-2 delete">Supprimer</button>
                         </div>
                         <div class="drag">
                             <h2>Ordre</h2>
@@ -100,25 +101,39 @@
                 });
                 return title
             },
-            submit() {
-                axios
-                    .get('http://localhost:3000/general', {headers: {'Access-Control-Allow-Origin': '*'}})
-                    .then(res => {
-                        let pages = res.data[0].pages;
-                        pages.push(this.page);
-                        axios
-                            .patch(`http://localhost:3000/general/${res.data[0]._id}`, {
-                                headers: {'Access-Control-Allow-Origin': '*'},
-                                pages: this.pages
-                            })
-                            .then(res => {
-                                console.log(res);
-                                this.success = true;
-                            })
-                    })
-                    .catch(err => {
-                        console.log(err);
-                    })
+            async submit() {
+                await this.updatePages(this.pages);
+                this.success = true;
+            },
+            async deletePage() {
+                let newPages = [];
+                this.pages.forEach(page => {
+                    if(page.id !== this.$route.params.id) {
+                        newPages.push(page)
+                    }
+                });
+                await this.updatePages(newPages);
+                window.location.href = '/admin/pages'
+            },
+            updatePages(pages) {
+                return new Promise(resolve => {
+                    axios
+                        .get('http://localhost:3000/general', {headers: {'Access-Control-Allow-Origin': '*'}})
+                        .then(res => {
+                            axios
+                                .patch(`http://localhost:3000/general/${res.data[0]._id}`, {
+                                    headers: {'Access-Control-Allow-Origin': '*'},
+                                    pages: pages
+                                })
+                                .then(res => {
+                                    console.log(res);
+                                    resolve();
+                                })
+                        })
+                        .catch(err => {
+                            console.log(err);
+                        })
+                })
             },
             getPage() {
                 return new Promise(resolve => {
