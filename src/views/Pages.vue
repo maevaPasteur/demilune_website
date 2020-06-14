@@ -1,15 +1,17 @@
 <template>
     <Layout2 v-if="auth">
         <div class="wrapper" v-if="pages">
-            <div v-if="pages.length">
+            <div v-if="pages.length" class="container-drag">
                 <h1>La liste des pages de la carte</h1>
-                <router-link :to="{ name: 'PagesCreate' }">Créer une page +</router-link>
-
-                <div class="container-drag">
-                    <div v-for="page in pages" :key="page.title">
-                        <p>{{ page.title }}</p>
-                    </div>
-                </div>
+                <h2>Faites coulisser les blocks pour changer l'ordre des pages et menus</h2>
+                <draggable v-model="pages" @change="saveOrder">
+                    <transition-group>
+                        <div v-for="page in pages" :key="page._id" class="item">
+                            {{page.title}}
+                        </div>
+                    </transition-group>
+                </draggable>
+                <router-link class="link-2" :to="{ name: 'PagesCreate' }">Créer une page +</router-link>
             </div>
             <div v-else>
                 <h1>Vous n'avez créé aucune page pour le moment</h1>
@@ -23,11 +25,12 @@
     import Authentification from "../stores/Authentification";
     import Layout2 from "../layouts/Layout2";
 
+    import draggable from 'vuedraggable';
     import axios from 'axios';
 
     export default {
         name: 'Pages',
-        components: {Layout2},
+        components: {Layout2, draggable},
         computed: {
             auth() {
                 return Authentification.state.auth
@@ -50,6 +53,11 @@
         data() {
             return {
                 pages: undefined
+            }
+        },
+        methods: {
+            saveOrder() {
+                console.log(this.pages)
             }
         }
     }

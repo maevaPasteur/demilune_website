@@ -275,4 +275,29 @@
             }
         }
     }
+    .container-drag {
+        h2 {
+            margin-bottom: 40px;
+            font-weight: 300;
+            opacity: .8;
+        }
+        .item {
+            background-color: #fff;
+            padding: 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: all ease-in-out .3s;
+            &:not(:last-of-type) {
+                margin-bottom: 10px;
+            }
+            &:hover {
+                box-shadow: 5px 5px 5px rgba(0,0,0,.1);
+            }
+        }
+        a {
+            display: block;
+            width: fit-content;
+            margin-top: 40px;
+        }
+    }
 </style>
