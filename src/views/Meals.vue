@@ -44,7 +44,7 @@
             this.mealTypes.forEach(type => {
                 let result = this.allMeals.filter(word => word.type === type._id);
                 if(result.length) {
-                    this.meals[type.title] = this.allMeals.filter(word => word.type === type._id);
+                    this.meals[type.title] = result;
                 }
             });
             console.log(this.meals);
@@ -90,9 +90,6 @@
                             console.log(err);
                         })
                 })
-            },
-            submit() {
-
             }
         }
     }

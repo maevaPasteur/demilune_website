@@ -7,6 +7,8 @@ import Admin from '../views/Admin'
 import Meals from "../views/Meals";
 import MealsCreate from "../views/MealsCreate";
 import MealsUpdate from "../views/MealsUpdate";
+import Pages from "../views/Pages";
+import PagesCreate from "../views/PagesCreate";
 
 Vue.use(VueRouter);
 
@@ -45,6 +47,16 @@ Vue.use(VueRouter);
       path: '/admin/plats/modifier/:id',
       name: 'MealUpdate',
       component: MealsUpdate
+    },
+    {
+      path: '/admin/pages',
+      name: 'Pages',
+      component: Pages
+    },
+    {
+      path: '/admin/pages/create',
+      name: 'PagesCreate',
+      component: PagesCreate
     }
 ];
 
