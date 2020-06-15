@@ -10,6 +10,7 @@ import MealsUpdate from "../views/MealsUpdate";
 import Pages from "../views/Pages";
 import PagesCreate from "../views/PagesCreate";
 import PagesUpdate from "../views/PagesUpdate";
+import Menus from "../views/Menus";
 
 Vue.use(VueRouter);
 
@@ -63,6 +64,11 @@ Vue.use(VueRouter);
       path: '/admin/pages/:id',
       name: 'PagesUpdate',
       component: PagesUpdate
+    },
+    {
+      path: '/admin/menus',
+      name: 'Menus',
+      component: Menus
     }
 ];
 

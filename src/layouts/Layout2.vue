@@ -14,7 +14,7 @@
                         <router-link :to="{ name: 'Pages' }">Les pages</router-link>
                     </li>
                     <li>
-                        <router-link :to="{ name: 'Admin' }">Les menus</router-link>
+                        <router-link :to="{ name: 'Menus' }">Les menus</router-link>
                     </li>
                     <li>
                         <router-link :to="{ name: 'Meals' }">Les plats</router-link>
