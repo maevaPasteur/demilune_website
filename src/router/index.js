@@ -11,6 +11,8 @@ import Pages from "../views/Pages";
 import PagesCreate from "../views/PagesCreate";
 import PagesUpdate from "../views/PagesUpdate";
 import Menus from "../views/Menus";
+import MenusUpdate from "../views/MenusUpdate";
+import MenusCreate from "../views/MenusCreate";
 
 Vue.use(VueRouter);
 
@@ -69,6 +71,16 @@ Vue.use(VueRouter);
       path: '/admin/menus',
       name: 'Menus',
       component: Menus
+    },
+    {
+      path: '/admin/menus/:id',
+      name: 'MenusUpdate',
+      component: MenusUpdate
+    },
+    {
+      path: '/admin/menus/:id',
+      name: 'MenusCreate',
+      component: MenusCreate
     }
 ];
 

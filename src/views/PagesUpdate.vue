@@ -5,7 +5,7 @@
                 <h1>Modifier la page : {{ page.title }}</h1>
                 <router-link :to="{ name: 'Pages' }">Voir toutes les pages</router-link>
                 <form @submit.prevent="submit" @click="success = false">
-                    <div class="d-flex">
+                    <div class="d-flex full">
                         <div>
                             <div>
                                 <h2>Mettre à jour la page</h2>
@@ -177,7 +177,7 @@
                             console.log(err);
                         })
                 })
-            },
+            }
         }
     }
 </script>

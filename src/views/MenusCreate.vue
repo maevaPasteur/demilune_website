@@ -1,27 +1,37 @@
 <template>
     <Layout2 v-if="auth">
         <div class="wrapper">
-            <router-link :to="{ name: 'Pages' }">Voir toutes les pages</router-link>
+            <router-link :to="{ name: 'Menus' }">Voir tous les menus</router-link>
             <form @submit.prevent="submit" @click="success = false" v-if="ready">
                 <div>
                     <h2>Ajouter une page</h2>
                     <label>
                         <span>Titre</span>
-                        <input type="text" required v-model="page.title"/>
+                        <input type="text" required v-model="menu.title"/>
+                    </label>
+                    <label>
+                        <span>Prix</span>
+                        <input type="number" step="0.01" required v-model="menu.price"/>
+                    </label>
+                    <label>
+                        <span>Description (optionnel)</span>
+                        <textarea v-model="menu.description"></textarea>
                     </label>
                     <div class="create-content">
                         <h3>Choisir son contenu</h3>
                         <details v-for="(type, key) in meals" :key="key">
                             <summary><h2>{{ key }}</h2></summary>
                             <label v-for="meal in type" :key="meal.title">
-                                <input type="checkbox" :id="meal.id" :value="meal._id" v-model="page.content">
+                                <input v-if="getMealModel(key) === 'starter'" type="checkbox" :id="meal.id" :value="meal._id" v-model="menu.starters">
+                                <input v-else-if="getMealModel(key) === 'dessert'" type="checkbox" :id="meal.id" :value="meal._id" v-model="menu.desserts">
+                                <input v-else type="checkbox" :id="meal.id" :value="meal._id" v-model="menu.meals">
                                 <span>{{ meal.title }}</span>
                             </label>
                         </details>
                     </div>
                 </div>
-                <p v-if="success" class="success">La page a bien été créé</p>
-                <button type="submit" class="link-2">Créer la nouvelle page</button>
+                <p v-if="success" class="success">Le menu a bien été créé</p>
+                <button type="submit" class="link-2">Créer le menu</button>
             </form>
         </div>
     </Layout2>
@@ -34,7 +44,7 @@
     import axios from 'axios';
 
     export default {
-        name: 'PagesCreate',
+        name: 'MenusCreate',
         components: {Layout2},
         computed: {
             auth() {
@@ -45,8 +55,6 @@
             if(!this.auth) {
                 window.location.href = 'connexion';
             }
-            let date = new Date;
-            this.page.id = date.getFullYear()+'-'+date.getMonth()+'-'+date.getDay()+'-'+date.getHours()+'-'+date.getSeconds()+'-'+date.getMilliseconds();
             const types = await this.getMealsType();
             const allMeals = await this.getMeals();
             types.forEach(type => {
@@ -55,26 +63,33 @@
                     this.meals[type.title] = result;
                 }
             });
-            this.ready = true
+            console.log(this.meals);
+            this.ready = true;
         },
         data() {
             return {
-                success: false,
-                ready: false,
                 meals: {},
-                checked: [],
-                page: {
-                    id: null,
-                    title: null,
-                    content: [],
-                    type: 'page'
+                ready: false,
+                success: false,
+                menu: {
+                    data: {headers: {'Access-Control-Allow-Origin': '*'}},
+                    title: undefined,
+                    description: undefined,
+                    starters: [],
+                    meals: [],
+                    desserts: []
                 }
             }
         },
         methods: {
-            generateId() {
-                let date = new Date;
-                this.page.id = date.getFullYear()+'-'+date.getMonth()+'-'+date.getDay()+'-'+date.getHours()+'-'+date.getSeconds()+'-'+date.getMilliseconds();
+            getMealModel(title) {
+                if(title === 'Les entrées') {
+                    return 'starter'
+                } else if(title === 'Les glaces' || title === 'Les fromages' || title === 'Les desserts' || title === 'Les crêpes') {
+                    return 'dessert'
+                } else {
+                    return 'meal'
+                }
             },
             getMealsType() {
                 return new Promise(resolve => {
@@ -106,30 +121,23 @@
             },
             submit() {
                 axios
-                    .get('http://localhost:3000/general', {headers: {'Access-Control-Allow-Origin': '*'}})
+                    .post('http://localhost:3000/menus', this.menu)
                     .then(res => {
-                        let pages = res.data[0].pages;
-                        pages.push(this.page);
-                        axios
-                            .patch(`http://localhost:3000/general/${res.data[0]._id}`, {
-                                headers: {'Access-Control-Allow-Origin': '*'},
-                                pages: pages
-                            })
-                            .then(res => {
-                                console.log(res);
-                                this.success = true;
-                                this.page.title = '';
-                                this.page.content = [];
-                                let date = new Date;
-                                this.page.id = date.getFullYear()+'-'+date.getMonth()+'-'+date.getDay()+'-'+date.getHours()+'-'+date.getSeconds()+'-'+date.getMilliseconds();
-                            })
+                       console.log(res);
+                       this.success = true;
+                       this.menu = {
+                            data: {headers: {'Access-Control-Allow-Origin': '*'}},
+                            title: undefined,
+                                description: undefined,
+                                starters: [],
+                                meals: [],
+                                desserts: []
+                        }
                     })
                     .catch(err => {
-                        console.log(err);
-                    });
+                        console.log(err)
+                    })
             }
         }
     }
 </script>
-
-

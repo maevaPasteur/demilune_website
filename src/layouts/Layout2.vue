@@ -319,6 +319,12 @@
             font-size: 14px;
             margin: 20px 0 40px;
         }
+        & > div:not(:first-of-type) {
+            margin-top: 40px;
+        }
+        h3 {
+            margin-bottom: 10px;
+        }
     }
     .section-new-page {
         form .create-content label {
@@ -336,5 +342,8 @@
                 flex-shrink: 0;
             }
         }
+    }
+    .section-new-page form > .full label {
+        width: 100%;
     }
 </style>
