@@ -128,10 +128,10 @@
                        this.menu = {
                             data: {headers: {'Access-Control-Allow-Origin': '*'}},
                             title: undefined,
-                                description: undefined,
-                                starters: [],
-                                meals: [],
-                                desserts: []
+                            description: undefined,
+                            starters: [],
+                            meals: [],
+                            desserts: []
                         }
                     })
                     .catch(err => {

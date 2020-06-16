@@ -8,7 +8,8 @@
                     <transition-group>
                         <div v-for="page in pages" :key="page.title" class="item">
                             <p>{{page.title}}</p>
-                            <router-link class="link-1" :to="{ name: 'PagesUpdate', params: { id: page.id } }"><span>Modifier</span></router-link>
+                            <router-link v-if="page.type === 'menu'" class="link-1" :to="{ name: 'MenusUpdate', params: { id: page.id } }"><span>Modifier</span></router-link>
+                            <router-link v-else class="link-1" :to="{ name: 'PagesUpdate', params: { id: page.id } }"><span>Modifier</span></router-link>
                         </div>
                     </transition-group>
                 </draggable>
@@ -39,10 +40,9 @@
         },
         async mounted() {
             axios
-                .get('http://localhost:3000/general', {headers: {'Access-Control-Allow-Origin': '*'}})
+                .get('http://localhost:3000/pages', {headers: {'Access-Control-Allow-Origin': '*'}})
                 .then(res => {
-                    this.generalId = res.data[0]._id;
-                    this.pages = res.data[0].pages;
+                    this.pages = res.data;
                     console.log(this.pages)
                 })
                 .catch(err => {
@@ -59,18 +59,12 @@
         methods: {
             saveOrder() {
                 axios
-                    .get('http://localhost:3000/general', {headers: {'Access-Control-Allow-Origin': '*'}})
+                    .patch('http://localhost:3000/pages', {
+                        headers: {'Access-Control-Allow-Origin': '*'},
+                        pages: this.pages
+                    })
                     .then(res => {
-                        let pages = res.data[0].pages;
-                        pages.push(this.page);
-                        axios
-                            .patch(`http://localhost:3000/general/${ this.generalId }`, {
-                                headers: {'Access-Control-Allow-Origin': '*'},
-                                pages: this.pages
-                            })
-                            .then(res => {
-                                console.log(res);
-                            })
+                        console.log(res);
                     })
                     .catch(err => {
                         console.log(err);

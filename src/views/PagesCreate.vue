@@ -64,10 +64,9 @@
                 meals: {},
                 checked: [],
                 page: {
-                    id: null,
                     title: null,
                     content: [],
-                    type: 'page'
+                    description: null
                 }
             }
         },
@@ -106,27 +105,22 @@
             },
             submit() {
                 axios
-                    .get('http://localhost:3000/general', {headers: {'Access-Control-Allow-Origin': '*'}})
+                    .post('http://localhost:3000/pages', {
+                        headers: {'Access-Control-Allow-Origin': '*'},
+                        page: this.page
+                    })
                     .then(res => {
-                        let pages = res.data[0].pages;
-                        pages.push(this.page);
-                        axios
-                            .patch(`http://localhost:3000/general/${res.data[0]._id}`, {
-                                headers: {'Access-Control-Allow-Origin': '*'},
-                                pages: pages
-                            })
-                            .then(res => {
-                                console.log(res);
-                                this.success = true;
-                                this.page.title = '';
-                                this.page.content = [];
-                                let date = new Date;
-                                this.page.id = date.getFullYear()+'-'+date.getMonth()+'-'+date.getDay()+'-'+date.getHours()+'-'+date.getSeconds()+'-'+date.getMilliseconds();
-                            })
+                        this.success = true;
+                        this.page = {
+                            title: undefined,
+                            description: undefined,
+                            content: []
+                        };
+                        console.log(res)
                     })
                     .catch(err => {
-                        console.log(err);
-                    });
+                        console.log(err)
+                    })
             }
         }
     }

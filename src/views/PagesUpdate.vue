@@ -4,7 +4,7 @@
             <div v-if="page">
                 <h1>Modifier la page : {{ page.title }}</h1>
                 <router-link :to="{ name: 'Pages' }">Voir toutes les pages</router-link>
-                <form @submit.prevent="submit" @click="success = false">
+                <form @submit.prevent="updatePage" @click="success = false">
                     <div class="d-flex full">
                         <div>
                             <div>
@@ -82,11 +82,9 @@
         },
         data() {
             return {
-                generalId: undefined,
                 success: false,
                 ready: false,
                 page: undefined,
-                pages: undefined,
                 meals: {},
                 allMeals: undefined
             }
@@ -101,48 +99,37 @@
                 });
                 return title
             },
-            async submit() {
-                await this.updatePages(this.pages);
-                this.success = true;
+            updatePage() {
+                axios
+                    .patch(`http://localhost:3000/pages/${this.$route.params.id}`, {
+                        headers: {'Access-Control-Allow-Origin': '*'},
+                        page: this.page
+                    })
+                    .then(res => {
+                        console.log(res);
+                        this.success = true
+                    })
+                    .catch(err => {
+                        console.log(err)
+                    })
             },
-            async deletePage() {
-                let newPages = [];
-                this.pages.forEach(page => {
-                    if(page.id !== this.$route.params.id) {
-                        newPages.push(page)
-                    }
-                });
-                await this.updatePages(newPages);
-                window.location.href = '/admin/pages'
-            },
-            updatePages(pages) {
-                return new Promise(resolve => {
-                    axios
-                        .get('http://localhost:3000/general', {headers: {'Access-Control-Allow-Origin': '*'}})
-                        .then(res => {
-                            axios
-                                .patch(`http://localhost:3000/general/${res.data[0]._id}`, {
-                                    headers: {'Access-Control-Allow-Origin': '*'},
-                                    pages: pages
-                                })
-                                .then(res => {
-                                    console.log(res);
-                                    resolve();
-                                })
-                        })
-                        .catch(err => {
-                            console.log(err);
-                        })
-                })
+            deletePage() {
+                axios
+                    .delete(`http://localhost:3000/pages/${this.$route.params.id}`, {headers: {'Access-Control-Allow-Origin': '*'}})
+                    .then(res => {
+                        console.log(res);
+                        window.location.href = '/admin/pages'
+                    })
+                    .catch(err => {
+                        console.log(err)
+                    })
             },
             getPage() {
                 return new Promise(resolve => {
                     axios
-                        .get('http://localhost:3000/general', {headers: {'Access-Control-Allow-Origin': '*'}})
+                        .get(`http://localhost:3000/pages/${this.$route.params.id}`, {headers: {'Access-Control-Allow-Origin': '*'}})
                         .then(res => {
-                            this.pages = res.data[0].pages;
-                            this.page = this.pages.filter(item => item.id === this.$route.params.id)[0];
-                            this.generalId = res.data[0]._id;
+                            this.page = res.data;
                             resolve(res)
                         })
                         .catch(err => {
