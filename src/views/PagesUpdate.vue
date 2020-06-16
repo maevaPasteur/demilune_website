@@ -13,6 +13,10 @@
                                     <span>Titre</span>
                                     <input type="text" required v-model="page.title"/>
                                 </label>
+                                <label>
+                                    <span>Description (optionel)</span>
+                                    <input type="text" v-model="page.description"/>
+                                </label>
                                 <div class="create-content">
                                     <h3>Ajouter ou supprimer des plats</h3>
                                     <details v-for="(type, key) in meals" :key="key">

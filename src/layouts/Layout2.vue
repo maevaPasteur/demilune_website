@@ -19,9 +19,6 @@
                     <li>
                         <router-link :to="{ name: 'Meals' }">Les plats</router-link>
                     </li>
-                    <li>
-                        <router-link :to="{ name: 'Admin' }">Les types de plats</router-link>
-                    </li>
                 </ul>
             </nav>
             <button class="link-2" @click="logout">Déconnexion</button>
