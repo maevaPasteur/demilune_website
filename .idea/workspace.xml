@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="793a80e8-cccf-43e7-997d-c2ec58d600de" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/MenuPage.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/RestaurantMenu.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/MenuChoicie.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HelloWorld.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/Layout2.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/Layout2.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MenuPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MenuPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/MealsUpdate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/MealsUpdate.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/RestaurantMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/RestaurantMenu.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +67,7 @@
       <option name="presentableId" value="Default" />
       <updated>1591291512705</updated>
       <workItem from="1591291513852" duration="1411000" />
-      <workItem from="1592049385800" duration="98249000" />
+      <workItem from="1592049385800" duration="111474000" />
     </task>
     <servers />
   </component>

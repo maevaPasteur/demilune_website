@@ -19,7 +19,7 @@
                         </label>
                         <label>
                             <span>Prix (optionnel)</span>
-                            <input type="number" v-model="meal.price"/>
+                            <input type="number" step="0.01" v-model="meal.price"/>
                         </label>
                         <label>
                             <span>Description (optionel)</span>
@@ -36,7 +36,7 @@
                             </label>
                             <label>
                                 <span>Prix de la variante 1 (optionel)</span>
-                                <input type="number" v-model="meal.variant_1_price">
+                                <input type="number" step="0.01" v-model="meal.variant_1_price">
                             </label>
                         </div>
                         <div class="d-flex">
@@ -46,7 +46,7 @@
                             </label>
                             <label>
                                 <span>Prix de la variante 2 (optionel)</span>
-                                <input type="number" v-model="meal.variant_2_price">
+                                <input type="number" step="0.01" v-model="meal.variant_2_price">
                             </label>
                         </div>
                     </div>
