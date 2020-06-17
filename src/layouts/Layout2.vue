@@ -8,7 +8,7 @@
                         <router-link :to="{ name: 'Admin' }">Paramètres globaux</router-link>
                     </li>
                     <li>
-                        <router-link :to="{ name: 'Admin' }">La carte</router-link>
+                        <router-link :to="{ name: 'RestaurantMenu' }">La carte</router-link>
                     </li>
                     <li>
                         <router-link :to="{ name: 'Pages' }">Les pages</router-link>

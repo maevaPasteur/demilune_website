@@ -13,6 +13,7 @@ import PagesUpdate from "../views/PagesUpdate";
 import Menus from "../views/Menus";
 import MenusUpdate from "../views/MenusUpdate";
 import MenusCreate from "../views/MenusCreate";
+import RestaurantMenu from "../views/RestaurantMenu";
 
 Vue.use(VueRouter);
 
@@ -81,6 +82,11 @@ Vue.use(VueRouter);
       path: '/admin/menus/:id',
       name: 'MenusCreate',
       component: MenusCreate
+    },
+    {
+      path: '/admin/carte',
+      name: 'RestaurantMenu',
+      component: RestaurantMenu
     }
 ];
 
