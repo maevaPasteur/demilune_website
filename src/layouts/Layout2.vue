@@ -38,7 +38,7 @@
         methods: {
             logout() {
                 Authentification.logout();
-                window.location.href = 'connexion';
+                window.location.href = '/connexion';
             }
         }
     }

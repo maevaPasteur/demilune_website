@@ -17,7 +17,7 @@
                     <MenuItem v-for="page in menus" :key="page.id" :page="page" :meals="meals"/>
                 </div>
             </section>
-            <reassurance-images/>
+            <gallery/>
         </div>
     </default-layout>
 </template>
@@ -27,11 +27,11 @@
     import axios from 'axios';
     import MenuItem from "../components/MenuItem";
     import PageItem from "../components/PageItem";
-    import ReassuranceImages from "../components/ReassuranceImages";
+    import Gallery from "../components/Gallery";
 
     export default {
         name: 'Carte',
-        components: {ReassuranceImages, PageItem, MenuItem},
+        components: {Gallery, PageItem, MenuItem},
         mounted() {
             axios
                 .get('http://localhost:3000/general', {

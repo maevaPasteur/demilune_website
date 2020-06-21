@@ -47,7 +47,7 @@
         },
         async mounted() {
             if(!this.auth) {
-                window.location.href = 'connexion';
+                window.location.href = '/connexion';
             }
             let date = new Date;
             this.page.id = date.getFullYear()+'-'+date.getMonth()+'-'+date.getDay()+'-'+date.getHours()+'-'+date.getSeconds()+'-'+date.getMilliseconds();

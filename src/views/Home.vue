@@ -4,7 +4,9 @@
       <section class="section_video">
         <div>
           <h1 v-html="title()"></h1>
-          <router-link :to="{name: 'Carte'}">{{ general.button }}</router-link>
+          <div>
+            <router-link :to="{name: 'Carte'}">{{ general.button }}</router-link>
+          </div>
         </div>
         <video autoplay muted loop poster="../assets/videos/cover.jpg">
           <source src="../assets/videos/demilune.mp4" type="video/mp4">
@@ -31,11 +33,12 @@
         </ul>
       </section>
 
-      <reassurance-images/>
+      <gallery/>
 
       <section class="section_menu wrapper section-1 center">
         <router-link class="link-2" :to="{name: 'Carte'}">{{ general.button_2 }}</router-link>
       </section>
+
     </div>
   </default-layout>
 </template>
@@ -43,12 +46,12 @@
 <script>
 
     import axios from 'axios';
-    import ReassuranceImages from "../components/ReassuranceImages";
+    import Gallery from "../components/Gallery";
 
     export default {
         name: 'Home',
-      components: {ReassuranceImages},
-      mounted() {
+        components: {Gallery},
+        mounted() {
             axios
                 .get('http://localhost:3000/general', {
                   headers: {'Access-Control-Allow-Origin': '*'}
@@ -58,6 +61,7 @@
                     console.log("général est vide")
                   } else {
                     this.general = res.data[0];
+                    this.testSections()
                   }
                 })
                 .catch(err => {
@@ -69,15 +73,32 @@
                 general: undefined
             }
         },
+        updated() {
+          this.testSections();
+          window.addEventListener('scroll',() => {
+            this.testSections()
+          })
+        },
         methods: {
             title() {
-              if(this.general) {
-                let newTitle = '';
-                this.general.title.split('<br>').forEach(item => {
-                  newTitle += `<span>${ item }</span>`
-                });
-                return newTitle
-              }
+                if(this.general) {
+                    let newTitle = '';
+                    this.general.title.split('<br>').forEach(item => {
+                        newTitle += `<span>${ item }</span>`
+                    });
+                    return newTitle
+                }
+            },
+            testSections() {
+              document.querySelectorAll('.page-home section:not(.show)').forEach(section => {
+                if(this.isVisible(section)) {
+                  section.classList.add('show')
+                }
+              });
+            },
+            isVisible(element) {
+              var position = element.getBoundingClientRect();
+              return position.top < window.innerHeight && position.bottom >= 0;
             }
         }
     }
@@ -109,7 +130,17 @@
       display: block;
       background-color: #000;
       width: fit-content;
-      padding: 0 5px;
+      padding: 0 10px;
+      overflow: hidden;
+      max-width: 1000px;
+      white-space: nowrap;
+      transition: max-width ease-out .8s .5s, padding ease-out .4s .5s;
+      &:nth-of-type(2) {
+        transition-delay: .7s;
+      }
+      &:nth-of-type(3) {
+        transition-delay: .9s;
+      }
       &:not(:last-of-type) {
         margin-bottom: 15px;
       }
@@ -122,12 +153,12 @@
       padding: 20px 25px 16px;
       line-height: 1;
       font-weight: 300;
-      min-width: 200px;
+      min-width: 150px;
       text-align: center;
       cursor: pointer;
       border: solid 2px #000;
       position: relative;
-      transition: color ease-out .3s;
+      transition: color ease-out .3s, transform ease-out .7s 1.1s;
       &:before {
         content: '';
         z-index: -1;
@@ -147,12 +178,36 @@
         }
       }
     }
+    div div {
+      overflow: hidden;
+    }
+    &:not(.show) {
+      h1 span {
+        max-width: 0;
+        padding: 0;
+      }
+      div div a {
+        transform: translateX(-100%);
+      }
+    }
   }
   .section_text {
     font-size: 45px;
     line-height: 1.5;
     h2 {
       font-size: 20px;
+    }
+    h2, p {
+      transition: transform ease-out 1s .5s, opacity ease-out 1s .5s;
+    }
+    p {
+      transition-delay: .7s;
+    }
+    &:not(.show) {
+      h2, p {
+        opacity: 0;
+        transform: translateY(30px);
+      }
     }
   }
   .section_horraires {
@@ -177,10 +232,61 @@
         z-index: -1;
         left: -5px;
         top: 2px;
+        transform-origin: 0 0;
+        transition: transform ease-out .5s .7s;
+      }
+    }
+    h2, li {
+      transition: transform ease-out 1s .5s, opacity ease-out 1s .5s;
+    }
+    li:nth-of-type(2) {
+      transition-delay: .7s;
+      span:before {
+        transition-delay: .9s;
+      }
+    }
+    li:nth-of-type(3) {
+      transition-delay: .9s;
+      span:before {
+        transition-delay: 1.1s;
+      }
+    }
+    li:nth-of-type(4) {
+      transition-delay: 1.1s;
+      span:before {
+        transition-delay: 1.3s;
+      }
+    }
+    li:nth-of-type(5) {
+      transition-delay: 1.3s;
+      span:before {
+        transition-delay: 1.5s;
+      }
+    }
+    li:nth-of-type(6) {
+      transition-delay: 1.5s;
+      span:before {
+        transition-delay: 1.7s;
+      }
+    }
+    li:nth-of-type(7) {
+      transition-delay: 1.7s;
+      span:before {
+        transition-delay: 1.9s;
+      }
+    }
+    &:not(.show) {
+      h2, li {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      span:before {
+        transform: scale(0, 1);
       }
     }
   }
   .center {
     text-align: center;
   }
+
 </style>

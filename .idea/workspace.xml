@@ -2,17 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="793a80e8-cccf-43e7-997d-c2ec58d600de" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/MenuChoiceWeb.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MenuItem.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PageItem.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ReassuranceImages.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/Carte.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MenuChoicie.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MenuChoice.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MenuPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MenuPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/Default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/Default.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ReassuranceImages.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Gallery.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/Layout2.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/Layout2.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Admin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Admin.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Carte.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Carte.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Meals.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Meals.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/MealsCreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/MealsCreate.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/MealsUpdate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/MealsUpdate.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Menus.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Menus.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/MenusCreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/MenusCreate.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/MenusUpdate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/MenusUpdate.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/PagesCreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/PagesCreate.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/PagesUpdate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/PagesUpdate.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +77,7 @@
       <option name="presentableId" value="Default" />
       <updated>1591291512705</updated>
       <workItem from="1591291513852" duration="1411000" />
-      <workItem from="1592049385800" duration="122828000" />
+      <workItem from="1592049385800" duration="130774000" />
     </task>
     <servers />
   </component>

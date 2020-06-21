@@ -75,7 +75,7 @@
         },
         mounted() {
             if(!this.auth) {
-                window.location.href = 'connexion';
+                window.location.href = '/connexion';
             }
             axios
                 .get(`http://localhost:3000/meals/${ this.$route.params.id }`, {

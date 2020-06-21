@@ -53,7 +53,7 @@
         },
         async mounted() {
             if(!this.auth) {
-                window.location.href = 'connexion';
+                window.location.href = '/connexion';
             }
             const types = await this.getMealsType();
             const allMeals = await this.getMeals();
