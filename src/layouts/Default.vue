@@ -1,8 +1,9 @@
 <template>
-    <div>
+    <div :class="className">
         <header>
-            <img src="../assets/images/logo_1.svg" alt="logo du restaurant la Demi-lune à Dole">
-            <p>La Demi-Lune</p>
+            <router-link :to="{name: 'Home'}">
+                <img src="../assets/images/logo_demi_lune_3.svg" alt="logo du restaurant la Demi-lune à Dole">
+            </router-link>
             <a class="link-1" href="tel:0384728282">Réservation <span>03 84 72 82 82</span></a>
         </header>
         <main>
@@ -29,7 +30,8 @@
     export default {
         name: 'Default',
         props: {
-            text: String
+            text: String,
+            className: String
         }
     }
 </script>
@@ -50,7 +52,7 @@
         font-size: 20px;
         font-weight: 500;
         img {
-            width: 70px;
+            width: 200px;
         }
         p {
             margin-left: 10px;
@@ -58,6 +60,8 @@
         }
         a {
             pointer-events: all;
+        }
+        .link-1 {
             padding: 20px 0 20px 20px;
         }
     }

@@ -40,7 +40,7 @@
 </template>
 
 <script>
-    import MenuChoice from "./MenuChoicie";
+    import MenuChoice from "./MenuChoice";
     export default {
         name: 'MenuPage',
         components: {MenuChoice},

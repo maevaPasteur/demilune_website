@@ -14,6 +14,7 @@ import Menus from "../views/Menus";
 import MenusUpdate from "../views/MenusUpdate";
 import MenusCreate from "../views/MenusCreate";
 import RestaurantMenu from "../views/RestaurantMenu";
+import Carte from "../views/Carte";
 
 Vue.use(VueRouter);
 
@@ -87,6 +88,12 @@ Vue.use(VueRouter);
       path: '/admin/carte',
       name: 'RestaurantMenu',
       component: RestaurantMenu
+    }
+    ,
+    {
+      path: '/carte',
+      name: 'Carte',
+      component: Carte
     }
 ];
 

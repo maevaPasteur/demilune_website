@@ -4,7 +4,7 @@
       <section class="section_video">
         <div>
           <h1 v-html="title()"></h1>
-          <a>{{ general.button }}</a>
+          <router-link :to="{name: 'Carte'}">{{ general.button }}</router-link>
         </div>
         <video autoplay muted loop poster="../assets/videos/cover.jpg">
           <source src="../assets/videos/demilune.mp4" type="video/mp4">
@@ -31,14 +31,10 @@
         </ul>
       </section>
 
-      <section class="sections_images">
-        <img src="../assets/images/cover1.jpg" alt="terrasse du restaurant la demi-lune à Dole">
-        <img src="../assets/images/cover4.jpg" alt="terrasse du restaurant la demi-lune à Dole">
-        <img src="../assets/images/cover3.jpg" alt="terrasse du restaurant la demi-lune à Dole">
-        <img src="../assets/images/cover2.jpg" alt="terrasse du restaurant la demi-lune à Dole">
-      </section>
+      <reassurance-images/>
+
       <section class="section_menu wrapper section-1 center">
-        <a class="link-2">{{ general.button_2 }}</a>
+        <router-link class="link-2" :to="{name: 'Carte'}">{{ general.button_2 }}</router-link>
       </section>
     </div>
   </default-layout>
@@ -47,10 +43,12 @@
 <script>
 
     import axios from 'axios';
+    import ReassuranceImages from "../components/ReassuranceImages";
 
     export default {
         name: 'Home',
-        mounted() {
+      components: {ReassuranceImages},
+      mounted() {
             axios
                 .get('http://localhost:3000/general', {
                   headers: {'Access-Control-Allow-Origin': '*'}
@@ -179,19 +177,6 @@
         z-index: -1;
         left: -5px;
         top: 2px;
-      }
-    }
-  }
-  .sections_images {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    img {
-      width: calc(50% - 10px);
-      object-fit: cover;
-      &:nth-of-type(1),
-      &:nth-of-type(2) {
-        margin-bottom: 20px;
       }
     }
   }
