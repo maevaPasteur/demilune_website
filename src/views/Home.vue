@@ -18,7 +18,7 @@
         <p>{{ general.text_2 }}</p>
       </section>
 
-      <img src="../assets/images/terrasse.jpg" alt="terrasse du restaurant la demi-lune à Dole">
+      <img src="../assets/images/terrasse.webp" alt="terrasse du restaurant la demi-lune à Dole">
 
       <section class="section_horraires wrapper section-1">
         <h2>Horraires</h2>
@@ -287,6 +287,70 @@
   }
   .center {
     text-align: center;
+  }
+  
+  @media screen and (max-width: 1024px) {
+    .section_video {
+      font-size: 50px;
+      line-height: 1.2;
+      & > div {
+        left: 20px;
+      }
+    }
+    .section_text {
+      max-width: 700px;
+      font-size: 30px;
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+    .section_horraires {
+      padding-top: 100px;
+      padding-bottom: 100px;
+      h2 {
+        font-size: 20px;
+      }
+      ul {
+        font-size: 30px;
+      }
+    }
+    .sections_images {
+      img {
+        width: calc(50% - 5px);
+        &:nth-of-type(1),
+        &:nth-of-type(2) {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 520px) {
+    .section_video {
+      font-size: 33px;
+      line-height: 1.5;
+      h1 span:not(:last-of-type) {
+        margin-bottom: 10px;
+      }
+    }
+    .section_text {
+      font-size: 25px;
+    }
+    .section_horraires ul {
+      font-size: 20px;
+    }
+    .sections_images {
+      img {
+        width: 100%;
+        margin-bottom: 2px;
+        &:nth-of-type(1),
+        &:nth-of-type(2) {
+          margin-bottom: 2px;
+        }
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+    }
   }
 
 </style>

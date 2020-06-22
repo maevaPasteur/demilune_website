@@ -1,9 +1,9 @@
 <template>
-    <default-layout v-if="general" class-name="page-main-menu">
+    <default-layout v-if="general" :text="general.footer" class-name="page-main-menu">
         <div class="page-menu">
             <section class="section-image">
                 <h1>La Carte</h1>
-               <img src="../assets/images/dole.jpg" alt="restaurant la demi-lune à Dole">
+               <img src="../assets/images/dole.webp" alt="restaurant la demi-lune à Dole">
             </section>
             <section class="wrapper" v-if="meals">
                 <h2>
@@ -100,6 +100,7 @@
             left: 0;
             width: 100%;
             height: 100%;
+            object-position: top;
             object-fit: cover;
         }
     }

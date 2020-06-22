@@ -1,6 +1,6 @@
 <template>
     <div class="page-login wrapper" v-if="ready">
-        <img src="../assets/images/logo_1.svg" alt="logo du restaurant la Demi-lune à Dole">
+        <img src="../assets/images/logo.svg" alt="logo du restaurant la Demi-lune à Dole">
         <h1>Connexion</h1>
         <form @submit.prevent="submit">
             <p v-if="errorMessage" class="error"></p>

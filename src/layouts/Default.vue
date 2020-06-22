@@ -2,7 +2,7 @@
     <div :class="className">
         <header>
             <router-link :to="{name: 'Home'}">
-                <img src="../assets/images/logo_demi_lune_3.svg" alt="logo du restaurant la Demi-lune à Dole">
+                <img src="../assets/images/logo_demi_lune.svg" alt="logo du restaurant la Demi-lune à Dole">
             </router-link>
             <a class="link-1" href="tel:0384728282">Réservation <span>03 84 72 82 82</span></a>
         </header>
@@ -76,6 +76,38 @@
         }
         h3 {
             font-size: 20px;
+        }
+    }
+    @media screen and (max-width: 1024px) {
+        header {
+            font-size: 16px;
+        }
+        footer {
+            flex-direction: column;
+            font-size: 16px;
+            & > div, & > p {
+                width: 100%;
+            }
+            h3 {
+                font-size: 25px;
+                & + p {
+                    font-weight: 100;
+                }
+            }
+            & > p {
+                font-weight: 100;
+                font-size: 14px;
+                letter-spacing: .4px;
+                line-height: 1.7;
+            }
+        }
+    }
+    @media screen and (max-width: 520px) {
+        header img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            object-position: left;
         }
     }
 </style>

@@ -1,7 +1,7 @@
 <template>
     <div class="page-admin">
         <header>
-            <router-link to="/"><img src="../assets/images/logo_1.svg" alt="logo du restaurant la Demi-lune à Dole"></router-link>
+            <router-link to="/"><img src="../assets/images/logo.svg" alt="logo du restaurant la Demi-lune à Dole"></router-link>
             <nav>
                 <ul>
                     <li>

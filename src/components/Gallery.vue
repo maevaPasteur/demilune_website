@@ -1,9 +1,9 @@
 <template>
     <section class="sections_images">
-        <img src="../assets/images/cover1.jpg" alt="terrasse du restaurant la demi-lune à Dole">
-        <img src="../assets/images/cover4.jpg" alt="terrasse du restaurant la demi-lune à Dole">
-        <img src="../assets/images/cover3.jpg" alt="terrasse du restaurant la demi-lune à Dole">
-        <img src="../assets/images/cover2.jpg" alt="terrasse du restaurant la demi-lune à Dole">
+        <img src="../assets/images/cover1.webp" alt="terrasse du restaurant la demi-lune à Dole">
+        <img src="../assets/images/cover4.webp" alt="terrasse du restaurant la demi-lune à Dole">
+        <img src="../assets/images/cover3.webp" alt="terrasse du restaurant la demi-lune à Dole">
+        <img src="../assets/images/cover2.webp" alt="terrasse du restaurant la demi-lune à Dole">
     </section>
 </template>
 
