@@ -2,58 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="793a80e8-cccf-43e7-997d-c2ec58d600de" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/android-chrome-192x192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/android-chrome-512x512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/apple-touch-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/browserconfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favicon-16x16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favicon-32x32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/mstile-150x150.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/safari-pinned-tab.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/cover1.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/cover2.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/cover3.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/cover4.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/dole.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/terrasse.webp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/021A2481.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/021A2603.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/021A2647.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/DSC_2351.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/canal.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/cover1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/cover2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/cover3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/cover4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/dole.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/dole2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/dole3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/dole4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/dole5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/dole6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/logo_1.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/logo_demi_lune.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/logo_demi_lune.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/logo_demi_lune_1.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/logo_demi_lune_2.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/logo_demi_lune_3.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/photo1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/photo2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/photo3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/photo4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/photo5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/terrasse.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/terrasse2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Gallery.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Gallery.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/Default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/Default.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/Layout2.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/Layout2.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Carte.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Carte.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/videos/demilune.mp4" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -114,7 +64,8 @@
       <option name="presentableId" value="Default" />
       <updated>1591291512705</updated>
       <workItem from="1591291513852" duration="1411000" />
-      <workItem from="1592049385800" duration="135681000" />
+      <workItem from="1592049385800" duration="136531000" />
+      <workItem from="1593418615459" duration="538000" />
     </task>
     <servers />
   </component>
